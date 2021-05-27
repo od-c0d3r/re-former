@@ -1,6 +1,12 @@
 <h1>New User From</h1>
 
+<!-- After useing Rails partials-->
+
+<%= render :partial => 'form', locals: { users: @user } %>
+
 <!-- Railser Way  -->
+
+<!--
 <%= form_with model: @user do |form| %>
     
     <%= form.label :username, "Username :" %>
@@ -14,6 +20,7 @@
 
     <%= form.submit "Create"%>
 <% end %>
+-->
 
 <!-- Railsy way-->
 
