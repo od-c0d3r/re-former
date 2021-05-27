@@ -1,7 +1,23 @@
 <h1>New User From</h1>
 
+<!-- Railser Way  -->
+<%= form_with model: @user do |form| %>
+    
+    <%= form.label :username, "Username :" %>
+    <%= form.text_field :username %>
+
+    <%= form.label :email, "Email :" %>
+    <%= form.email_field :email, placeholder: "example@example.com"%>
+
+    <%= form.label :password, "Password :"%>
+    <%= form.password_field :password %>
+
+    <%= form.submit "Create"%>
+<% end %>
+
 <!-- Railsy way-->
 
+<!--
 <%= form_tag( '/users' ,method: "post", local: true) do %>
     <%= label_tag(:username, "Username :") %>
     <%= text_field_tag(:username) %>
@@ -14,7 +30,7 @@
 
     <%= submit_tag "Create"%>
 <% end %>
-
+-->
 
 <!-- HTML form-->
 
