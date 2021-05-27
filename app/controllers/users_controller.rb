@@ -23,11 +23,10 @@ class UsersController < ApplicationController
     if @user.update(username: params[:user]['username'], password: params[:user]['password'],
                     email: params[:user]['email'])
       flash[:success] = 'User was successfully updated'
-      redirect_to new_user_path
     else
       flash[:error] = 'Something went wrong'
-      render 'edit'
     end
+    render 'edit'
   end
 
   private
