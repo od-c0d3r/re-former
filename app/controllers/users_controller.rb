@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new(username: 'Test',
-                     email: 'test@test.com',
-                     password: 'omaromar')
+    @user = User.new
   end
 
   def create
@@ -20,8 +18,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(username: params[:user]['username'], password: params[:user]['password'],
-                    email: params[:user]['email'])
+    if @user.update(user_params)
       flash[:success] = 'User was successfully updated'
     else
       flash[:error] = 'Something went wrong'
