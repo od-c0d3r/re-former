@@ -1,2 +1,18 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>New User From</h1>
+<form method="post" action="/users" accept-charset="UTF-8">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> <!-- For rails tokeen -->
+
+    <label for="username">Username :</label>
+    <input type="text" id="username" name="user[username]">
+    
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="user[email]">
+    
+    <label for="password">Password :</>
+    <input type="password" id="password" name="user[password]">
+    
+
+    <input type="submit" value="Submit">
+
+</form>
